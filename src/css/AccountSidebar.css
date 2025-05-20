@@ -1,0 +1,142 @@
+.account-sidebar {
+    background-color: #001022;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    height: 90vh; 
+    width: 15%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  
+  .account-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .account-sidebar nav li {
+    margin: 10px 0;
+  }
+  
+  .account-sidebar-button {
+    display: block;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s, border-radius 0.3s;
+    text-decoration: none;
+  }
+  
+  .account-sidebar-button:hover {
+    background-color: #e77524;
+    border-radius: 10px;
+  }
+  
+  .account-sidebar-button.active {
+    background-color: #e77524;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .account-sidebar-button:focus {
+    outline: none;
+  }
+  
+  .logout-button {
+    background: none;
+    border: none;
+    color: white;
+    margin-top: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    transition: background-color 0.3s, border-radius 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #e77524;
+    border-radius: 10px;
+  }
+
+  .back-button-container {
+    padding: 16px;
+  }
+  
+  .back-button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar-divider {
+    width: 90%;
+    border: 1px solid white;
+    margin-bottom: 20px;
+  }
+  
+  .vertical-line {
+    width: 4px;
+    background-color: #00a4dc;
+    height: 100%;
+    margin-left: 0; 
+  }
+
+    .account-sidebar-button .icon,
+    .logout-button .icon,
+    .back-button svg {
+    margin-right: 8px;
+    vertical-align: middle;
+    font-size: 1.5rem;
+  }
+
+  .back-button:hover {
+  color: #e77524;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+  @media (max-width: 600px) {
+    .account-sidebar {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      height: auto;
+    }
+  
+    .account-sidebar-button {
+      flex: 1 1 auto;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .logout-button {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  

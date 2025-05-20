@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-page {
+  background-color: #001022;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #00a4dc;
+  box-sizing: border-box;
+}
+
+.login-card {
+  background-color: #e1e1e1;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  background-color: #e87722;
+  color: white;
+  padding: 12px;
+  width: 80%;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #cc651c;
+}
+
+.signup-link {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #000;
+}
+
+.signup-link a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.password-fields {
+  position: relative;
+  display: flex;
+  width: 75%;
+  margin-bottom: 12px;
+}
+
+.password-fields .login-input {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye-icons {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 20px;
+    width: 90%;
+    max-width: none;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .login-button {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .signup-link {
+    font-size: 10px;
+  }
+
+  .forgot-password {
+    font-size: 10px;
+  }
+}

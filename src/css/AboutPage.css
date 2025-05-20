@@ -1,0 +1,108 @@
+.about-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #001022;
+    border: 10px solid #00a4dc;
+    box-sizing: border-box;
+  }   
+
+  .about-content {
+  flex-grow: 1;
+  background-color: #001022;
+  padding: 1rem;
+  color: white;
+  border-radius: 0 12px 12px 0;
+  overflow-y: auto;
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-divider {
+  border: 1px solid white;
+  margin: 1rem 0;
+}
+
+.about-box {
+  background-color: white;
+  color: black;
+  padding: 25px 30px;
+  border-radius: 15px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.about-box h2 {
+  color: #e77524;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.about-box h3 {
+  color: #00a4dc;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-boxs h3 {
+  color: #e77524;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.about-boxs span {
+  color: #00a4dc;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.about-box ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 20px 0;
+}
+
+.about-box ul li::before {
+  margin-right: 10px;
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-section p {
+  color: #00a4dc;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-help {
+  margin-bottom: 10px;
+}
+
+.contact-button {
+  background-color: #e77524;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-button:hover {
+  background-color: #cc5c0c;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+  

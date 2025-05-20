@@ -1,0 +1,148 @@
+.sidebar {
+  background-color: #001022;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  flex-shrink: 0;
+  height: 90vh;
+  width: 240px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  border-radius: 20px;
+}
+
+.sidebar-content {
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.profile-section {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-divider {
+  width: 90%;
+  border: 1px solid white;
+  margin: 10px auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+nav li {
+  margin: 8px 0;
+}
+
+.sidebar-button {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-radius 0.3s;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.sidebar-button:hover {
+  background-color: #e77524;
+}
+
+.sidebar-button.active {
+  background-color: #e77524;
+  color: white;
+}
+
+.sidebar-button:focus {
+  outline: none;
+}
+
+.sidebar-button .icon {
+  margin-right: 12px;
+  font-size: 1.6rem;
+}
+
+.back-arrow {
+  margin-top: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s, border-radius 0.3s;
+  padding: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+.back-arrow:hover {
+  background-color: #e77524;
+  border-radius: 10px;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .sidebar-button {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .back-arrow {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .profile-section,
+  .vertical-line {
+    display: none;
+  }
+}
+
+
+
+
+  
+
+
+
