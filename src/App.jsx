@@ -1,8 +1,7 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Login";
-import SignUpForm from "./SignUpForm";
-import LoginForm from "./LoginForm";
+// import SignUpForm from "./SignUpForm";
+// import LoginForm from "./LoginForm";
 import ForgotPassword from "./ForgotPassword";
 import Dashboard from "./Dashboard";
 import SmartQnA from "./SmartQnA";
@@ -21,8 +20,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<SignUpForm />} />
-          <Route path="/login" element={<LoginForm />} />
+          {/* <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/login" element={<LoginForm />} /> */}
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/smart-qna" element={<SmartQnA />} />

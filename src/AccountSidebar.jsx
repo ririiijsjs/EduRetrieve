@@ -3,17 +3,25 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { FaUser, FaCommentDots, FaInfoCircle, FaSignOutAlt, FaArrowLeft } from "react-icons/fa";
 import "./css/AccountSidebar.css";
 import "./css/LogoutModal.css";
+import { useClerk } from "@clerk/clerk-react";
 
 const AccountSidebar = () => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const { signOut } = useClerk();
 
   const handleLogout = () => {
     setShowModal(true);
   };
 
-  const confirmLogout = () => {
-    navigate("/login");
+  const confirmLogout = async () => {
+    const succesFulLogut = await signOut();
+    if (succesFulLogut) {
+      navigate("/");
+    } else {
+      console.error("Logout failed");
+      setShowModal(false);
+    }
   };
 
   return (

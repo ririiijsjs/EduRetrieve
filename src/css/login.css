@@ -61,3 +61,119 @@ body {
 .social-btn img {
   height: 40px;
 }
+
+.login-card {
+  background-color: #e1e1e1;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Styles for both login and signup forms */
+.login-form, .signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input, .signup-input { /* Combined input styles */
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.password-fields {
+  position: relative;
+  display: flex;
+  width: 75%;
+  margin-bottom: 12px;
+}
+
+.password-fields .login-input,
+.password-fields .signup-input { /* Apply input style to inputs inside password-fields */
+  width: 100%;
+}
+
+.eye-icons {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  background-color: #e87722;
+  color: white;
+  padding: 12px;
+  width: 80%;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #cc651c;
+}
+
+.signup-link {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #000;
+}
+
+.signup-link a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-img {
+  height: 40px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
