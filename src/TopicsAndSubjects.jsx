@@ -1,79 +1,33 @@
 import React, { useState } from "react";
 import "./css/TopicsAndSubjects.css";
 import Sidebar from "./Sidebar";
+import UploadCourseModal from "./components/ModalView"; // Adjust the import path as necessary
 
 const TopicsAndSubjects = () => {
-  const [topics, setTopics] = useState([]);
-  const [courses, setCourses] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState("topic"); // "topic" or "course"
-  const [newItemName, setNewItemName] = useState("");
-  const [editIndex, setEditIndex] = useState(null);
+  const [topics, setTopics] = useState(0);
+  const [courses, setCourses] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAddOrEditItem = () => {
-    if (!newItemName.trim()) return;
-
-    const updatedList = modalType === "topic" ? [...topics] : [...courses];
-
-    if (editIndex !== null) {
-      updatedList[editIndex] = newItemName;
-    } else {
-      updatedList.push(newItemName);
-    }
-
-    modalType === "topic" ? setTopics(updatedList) : setCourses(updatedList);
-    setNewItemName("");
-    setEditIndex(null);
-    setShowModal(false);
+  const handleCourseUpload = (courseData) => {
+    console.log("Uploaded course:", courseData);
+    setCourses(courses + 1);
+    // You can add a MongoDB upload call here later
   };
 
-  const handleDelete = (index, type) => {
-    const updated = type === "topic" ? [...topics] : [...courses];
-    updated.splice(index, 1);
-    type === "topic" ? setTopics(updated) : setCourses(updated);
-  };
-
-  const openModal = (type, index = null) => {
-    setModalType(type);
-    setEditIndex(index);
-    setNewItemName(index !== null ? (type === "topic" ? topics[index] : courses[index]) : "");
-    setShowModal(true);
-  };
-
-  const renderTopicCards = () => (
+  const renderBoxes = (label, count, onAdd, isCourseSection = false) => (
     <>
-      {topics.map((topic, index) => (
+      {Array.from({ length: count }, (_, index) => (
         <div className="cards" key={index}>
-          <div className="plus-circle">📘</div>
-          <p>{topic}</p>
-          <div className="card-actions">
-            <button onClick={() => openModal("topic", index)}>✏️</button>
-            <button onClick={() => handleDelete(index, "topic")}>🗑️</button>
-          </div>
+          <div className="plus-circle">+</div>
+          <p>{label}</p>
         </div>
       ))}
-      <div className="cards add-card" onClick={() => openModal("topic")}>
+      <div
+        className="cards add-card"
+        onClick={isCourseSection ? () => setIsModalOpen(true) : onAdd}
+      >
         <div className="plus-circle">+</div>
-        <p>Add a New Topic</p>
-      </div>
-    </>
-  );
-
-  const renderCourseCards = () => (
-    <>
-      {courses.map((course, index) => (
-        <div className="cards" key={index}>
-          <div className="plus-circle">🎓</div>
-          <p>{course}</p>
-          <div className="card-actions">
-            <button onClick={() => openModal("course", index)}>✏️</button>
-            <button onClick={() => handleDelete(index, "course")}>🗑️</button>
-          </div>
-        </div>
-      ))}
-      <div className="cards add-card" onClick={() => openModal("course")}>
-        <div className="plus-circle">+</div>
-        <p>Save a Course</p>
+        <p>{isCourseSection ? "Upload Course" : "Add More"}</p>
       </div>
     </>
   );
@@ -94,39 +48,27 @@ const TopicsAndSubjects = () => {
 
           <div className="section">
             <h3>Saved Topic</h3>
-            <div className="grid">{renderTopicCards()}</div>
+            <div className="grid">
+              {renderBoxes('Add a New Topic', topics, () => setTopics(topics + 1))}
+            </div>
           </div>
 
           <div className="section">
-            <h3>Saved Courses</h3>
-            <div className="grid">{renderCourseCards()}</div>
-          </div>
-        </section>
-
-        {showModal && (
-          <div className="modal-overlay">
-            <div className="modal-content">
-              <h3>{editIndex !== null ? `Edit ${modalType}` : `Add New ${modalType}`}</h3>
-              <input
-                type="text"
-                placeholder={`Enter ${modalType} name`}
-                value={newItemName}
-                onChange={(e) => setNewItemName(e.target.value)}
-              />
-              <div className="modal-buttons">
-                <button onClick={handleAddOrEditItem}>{editIndex !== null ? "Update" : "Add"}</button>
-                <button onClick={() => setShowModal(false)}>Cancel</button>
-              </div>
+            <h3>Upload Courses</h3>
+            <div className="grid">
+              {renderBoxes('Save a Course', courses, handleCourseUpload, true)}
             </div>
           </div>
-        )}
+        </section>
       </main>
+
+      <UploadCourseModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onUpload={handleCourseUpload}
+      />
     </div>
   );
 };
 
 export default TopicsAndSubjects;
-
-
-
-

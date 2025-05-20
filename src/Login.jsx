@@ -93,6 +93,7 @@ function Login() {
       <div className="left-panel">
         <img src="public/eduretrieve-logo.png" alt="EdureTrieve Logo" className="logo-img" />
         <h2>Welcome to EndureTrieve!</h2>
+        <button onClick={() => navigate('/dashboard')}>dashboard</button>
       </div>
 
       <div className="right-panel">
